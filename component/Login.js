@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet,View,Text,TextInput,TouchableOpacity,ImageBackground} from 'react-native';
+import {StyleSheet,View,Text,TextInput,TouchableOpacity,ImageBackground,AsyncStorage} from 'react-native';
 import HomeScreen from './Home'
 
 const Info={
@@ -8,6 +8,9 @@ const Info={
 }
 
 export default class LoginScreen extends Component {
+  static navigationOptions={
+    header:null,
+  };
   constructor(props){
      super(props);
      this.state={userId:'',password:''}
@@ -45,8 +48,8 @@ export default class LoginScreen extends Component {
   }
   onSign=async()=>{
      if(Info.userId===this.state.userId && Info.password===this.state.password){
-
-        this.props.navigation.navigate('home')
+      await AsyncStorage.setItem('logged','1');
+        this.props.navigation.navigate('App');
     }
      else{
        alert("error")
