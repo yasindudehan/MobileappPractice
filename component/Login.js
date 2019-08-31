@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import {StyleSheet,View,Text,TextInput,TouchableOpacity,ImageBackground} from 'react-native';
+import HomeScreen from './Home'
 
+const Info={
+   userId:'admin',
+   password:'12345',
+}
 
 export default class LoginScreen extends Component {
   constructor(props){
@@ -8,6 +13,7 @@ export default class LoginScreen extends Component {
      this.state={userId:'',password:''}
   }
   render() {
+   // const { navigate } = this.props.navigation;  
     return (
          <View style={styles.container}>
          <ImageBackground source={require('./Image/a.png')}
@@ -38,7 +44,13 @@ export default class LoginScreen extends Component {
     ) 
   }
   onSign=async()=>{
-    alert("login");
+     if(Info.userId===this.state.userId && Info.password===this.state.password){
+
+        this.props.navigation.navigate('home')
+    }
+     else{
+       alert("error")
+     }
   }
 }
 
