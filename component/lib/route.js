@@ -15,6 +15,8 @@ import HomeScreen from '../salesrep/Home';
 import LoginScreen from '../Login';
 import HomeScreen1 from '../dist/Home1';
 import ProfileScreenD from '../dist/Profile';
+import ProfileScreenS from '../salesrep/Profile';
+import OrderScreenS from '../salesrep/AddOrder';
 class Authentication extends React.Component {
   constructor(props) {
     super(props);
@@ -49,6 +51,12 @@ const AuthStack = createStackNavigator({Login: LoginScreen});
 const ProfileDStack = createStackNavigator({
   profile: {screen: ProfileScreenD},
 }); /*Distributor Profile*/
+const ProfileSStack = createStackNavigator({
+  Profile: ProfileScreenS,
+}); /**Sales rep Profile Screen */
+const OrderSStack = createStackNavigator({
+  OrderS: OrderScreenS,
+}); /**Sales rep Order Screen */
 
 export default createAppContainer(
   createSwitchNavigator(
@@ -58,6 +66,8 @@ export default createAppContainer(
       App1: App1Stack,
       Auth: AuthStack,
       ProfileD: ProfileDStack,
+      ProfileS: ProfileSStack,
+      OrderS: OrderSStack,
     },
 
     {initialRouteName: 'AuthLoading'},

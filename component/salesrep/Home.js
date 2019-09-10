@@ -12,6 +12,10 @@ import {
 export default class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Home',
+    headerTintColor: 'white',
+    headerStyle: {
+      backgroundColor: '#0398fc',
+    },
   };
   render() {
     return (
@@ -21,14 +25,14 @@ export default class HomeScreen extends Component {
           <Text>LOGOUT</Text>
         </TouchableOpacity>
         <View style={styles.flexd}>
-          <TouchableOpacity style={styles.buttons}>
+          <TouchableOpacity style={styles.buttons} onPress={this.goProfile}>
             <Image
               source={require('../Image/profile.png')}
               style={styles.logo}
             />
             <Text>Profile</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.buttons}>
+          <TouchableOpacity style={styles.buttons} onPress={this.addOrder}>
             <Image
               source={require('../Image/addOrder.png')}
               style={styles.logo}
@@ -46,6 +50,12 @@ export default class HomeScreen extends Component {
   logOut = async () => {
     await AsyncStorage.clear();
     this.props.navigation.navigate('Auth');
+  };
+  goProfile = () => {
+    this.props.navigation.navigate('ProfileS');
+  };
+  addOrder = () => {
+    this.props.navigation.navigate('OrderS');
   };
 }
 
