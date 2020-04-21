@@ -6,7 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableHighlight,
-  Touchable
+  Touchable,
   addfield
 
 } from 'react-native';
