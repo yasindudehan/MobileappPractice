@@ -5,9 +5,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  TouchableHighlight,
-  Touchable,
-  addfield
+ 
 
 } from 'react-native';
 import {createAppContainer} from 'react-navigation';
