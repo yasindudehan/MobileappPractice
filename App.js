@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   Touchable
+  addfiel
 
 } from 'react-native';
 import {createAppContainer} from 'react-navigation';
